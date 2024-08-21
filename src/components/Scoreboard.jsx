@@ -6,12 +6,12 @@ function Scoreboard({ currentScore, highScore }) {
     <>
       <div className="scoreboard">
         <div className="current-score">
-          <p>Current Score</p>
-          <p>{currentScore}</p>
+          <p className="score-type">Current Score</p>
+          <p className="score">{currentScore}</p>
         </div>
         <div className="high-score">
-          <p>High Score</p>
-          <p>{highScore}</p>
+          <p className="score-type">High Score</p>
+          <p className="score">{highScore}</p>
         </div>
       </div>
     </>

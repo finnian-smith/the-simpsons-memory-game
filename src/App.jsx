@@ -26,13 +26,15 @@ function App() {
   };
 
   return (
-    <>
-      <Header title="The Simpsons Memory Game" />
-      <Scoreboard currentScore={currentScore} highScore={highScore} />
+    <div className="app">
+      <div className="section-a">
+        <Header title="The Simpsons Memory Game" />
+        <Scoreboard currentScore={currentScore} highScore={highScore} />
+      </div>
       {loading && <p>Loading cards...</p>}
       {error && <p>Error: {error}</p>}
       <CardContainer cards={cards} onCardClick={handleCardClick} />
-    </>
+    </div>
   );
 }
 
