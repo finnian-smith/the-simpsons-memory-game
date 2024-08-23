@@ -19,4 +19,8 @@
   --secondary-background-color: #ffffff;
   --scoreboard-background-color: #f14e28;
   --card-background-color: #70d1fe;
+  --button-background-color: #424f46;
+  --button-background-color-hover: #d1b271;
+  --button-font-color: #ffffff;
+  --button-font-color-hover: #000000;
 }
