@@ -15,9 +15,9 @@ function CardContainer({ cards, onCardClick }) {
 CardContainer.propTypes = {
   cards: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
     })
   ).isRequired,
   onCardClick: PropTypes.func.isRequired,

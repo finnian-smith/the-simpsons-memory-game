@@ -14,7 +14,7 @@ function Card({ card, onClick }) {
 
 Card.propTypes = {
   card: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     character: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
