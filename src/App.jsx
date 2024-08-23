@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Scoreboard from "./components/Scoreboard";
 import CardContainer from "./components/CardContainer";
 import useFetchCards from "./hooks/useFetchCards";
+import shuffleArray from "./utils/shuffleArray";
 
 function App() {
   const { cards, loading, error } = useFetchCards();
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
+  const [shuffledCards, setShuffledCards] = useState([]);
+
+  useEffect(() => {
+    setShuffledCards(cards);
+  }, [cards]);
 
   const handleCardClick = (id) => {
     if (clickedCards.includes(id)) {
@@ -23,6 +29,8 @@ function App() {
       setClickedCards([...clickedCards, id]);
       setCurrentScore(currentScore + 1);
     }
+
+    setShuffledCards(shuffleArray(cards));
   };
 
   return (
@@ -33,7 +41,7 @@ function App() {
       </div>
       {loading && <p>Loading cards...</p>}
       {error && <p>Error: {error}</p>}
-      <CardContainer cards={cards} onCardClick={handleCardClick} />
+      <CardContainer cards={shuffledCards} onCardClick={handleCardClick} />
     </div>
   );
 }
