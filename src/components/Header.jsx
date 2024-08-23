@@ -10,6 +10,7 @@ function Header({ title }) {
           Score points by clicking on each unique card, but avoid clicking the
           same card more than once!
         </p>
+        <p>The maximum score is 10.</p>
       </header>
     </>
   );
